@@ -1,0 +1,16 @@
+#! /bin/bash
+echo "myscript is starting..."
+
+find ./ -type f -name '*.log' -exec rm -rf {} \;
+if [ $? -eq 0 ]
+then
+    echo "removed all files ending with .log"
+fi
+
+find ./ -type f -name '*.tmp' -exec rm -rf {} \;
+if [ $? -eq 0 ]
+then
+    echo "removed all files ending with .tmp"    
+fi
+
+echo "myscript's work ended here"
